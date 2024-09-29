@@ -1,0 +1,12 @@
+import { render, screen } from '@testing-library/react';
+import {{pascalCase name}} from '.';
+
+describe('{{pascalCase name}} Component', () => {
+it('should render the heading', () => {
+render(
+<{{pascalCase name}} />);
+
+const heading = screen.getByRole('heading', { name: new RegExp(String({{pascalCase name}})) });
+expect(heading).toBeTruthy();
+});
+});
