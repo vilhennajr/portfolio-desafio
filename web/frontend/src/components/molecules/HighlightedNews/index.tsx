@@ -6,6 +6,7 @@ const HighlightedNews = ({
   emphasis,
   title,
   image,
+  link
 }: HighlightedNewsProps) => {
   return (
     <>
@@ -28,7 +29,13 @@ const HighlightedNews = ({
       ) : (
         <Box className="flex flex-col max-w-[4300px] 2xl:min-w-[464px] min-h-[426px] bg-white shadow-sm drop-shadow-lg shadow-gray-400 rounded-md p-6 gap-10">
           <Text className="text-base font-medium">{emphasis}</Text>
-          <Text className="text-[#C4170C] max-w-[416px] font-bold text-4xl">
+
+          <Text
+            onClick={() => {
+              window.open(link);
+            }}
+            className="text-[#C4170C] max-w-[416px] font-bold text-4xl hover:underline cursor-pointer"
+          >
             {title}
           </Text>
           <Text className="text-base font-normal line max-w-[416px]">
