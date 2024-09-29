@@ -8,6 +8,7 @@ import animationData from "../../../../public/lottie/loader.json";
 import axios from "axios";
 import HighlightedNews from "@/components/molecules/HighlightedNews";
 import NewsArticle from "@/components/molecules/NewsArticle";
+import GroupNews from "@/components/organisms/GroupNews";
 import PubliCard from "@/components/molecules/PubliCard";
 
 interface NewsData {
@@ -145,6 +146,35 @@ const InitialPage = () => {
                 </Box>
               ))}
           </Box>
+          {isLargerThanMd ? (
+            <Box className="flex flex-col gap-10  2xl:gap-56">
+              {data
+                .filter((news) => news.type === "agrupador-materia")
+                .map((news) => (
+                  <GroupNews
+                    onClick={() => window.open(news.footer?.url)}
+                    footer={news.footer?.label || ""}
+                    header={news.header || ""}
+                    key={news.id}
+                    firstProp={{
+                      image: news.group[0]?.content.image || "",
+                      title: news.group[0]?.content.title || "",
+                      url: news.group[0]?.content.url || "",
+                    }}
+                    secondProp={{
+                      image: news.group[1]?.content.image || "",
+                      title: news.group[1]?.content.title || "",
+                      url: news.group[1]?.content.url || "",
+                    }}
+                    thirdProp={{
+                      image: news.group[2]?.content.image || "",
+                      title: news.group[2]?.content.title || "",
+                      url: news.group[2]?.content.url || "",
+                    }}
+                  />
+                ))}
+            </Box>
+          ) : null}
         </Box>
         <Button
           className="w-4/6 2xl:w-7/12"
