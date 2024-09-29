@@ -1,5 +1,10 @@
 {
   "name": "globoi-portfolio-desafio",
+  "author": {
+    "name": "Flaviano Vilhena - 11913509334",
+    "email": "flavianovilhenna@gmail.com",
+    "url": "https://www.linkedin.com/in/vilhennajr/"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
